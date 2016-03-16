@@ -3,7 +3,7 @@
 set -e
 set -x
 
-sysctl kernel.name="client"
+hostnamectl set-hostname --static "client.domain.local"
 SERVER_IP_ADDR=192.168.56.101
 SERVER_FQDN=ipaserver.example.com
 SERVER_NAME=ipaserver
