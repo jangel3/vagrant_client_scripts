@@ -49,6 +49,7 @@ firewall-cmd --zone=public --add-port 123/udp
 
 firewall-cmd --set-default-zone=public
 
+echo "Setting up IP address ..."
 mv /etc/sysconfig/network-scripts/ifcfg-enp0s3 /etc/sysconfig/network-scripts/enp0s3 # Somehow the initial ifcfg is wrong.  Just deactivate it
 systemctl start network
 ip addr add $CLIENT_IP_ADDR/24 dev enp0s8 # Add ip address.
