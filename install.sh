@@ -55,6 +55,7 @@ systemctl start network
 sleep 5
 ip addr add $CLIENT_IP_ADDR/24 dev enp0s8 # Add ip address.
 sleep 5
+echo "$CLIENT_IP_ADDR    $CLIENT_FQDN $CLIENT_NAME" >> /etc/hosts
 
 echo "Installing IPA client ..."
 ipa-client-install --enable-dns-updates --ssh-trust-dns -p admin -w $PASSWORD -U
