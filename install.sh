@@ -49,6 +49,10 @@ firewall-cmd --zone=public --add-port 123/udp
 
 firewall-cmd --set-default-zone=public
 
+mv /etc/sysconfig/network-scripts/ifcfg-enp0s3 /etc/sysconfig/network-scripts/enp0s3 # Somehow the initial ifcfg is wrong.  Just deactivate it
+systemctl start network
+ip addr add $CLIENT_IP_ADDR/24 dev enp0s8 # Add ip address.
+
 echo "Installing IPA client ..."
 ipa-client-install --enable-dns-updates --ssh-trust-dns -p admin -w $PASSWORD -U
  
