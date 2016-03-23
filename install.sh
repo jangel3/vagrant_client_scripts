@@ -58,7 +58,7 @@ sleep 5
 echo "$SERVER_IP_ADDR    $SERVER_FQDN $SERVER_NAME" >> /etc/hosts
 
 echo "Installing IPA client ..."
-ipa-client-install --enable-dns-updates --ssh-trust-dns -p admin -w $PASSWORD -U
+ipa-client-install --enable-dns-updates --ssh-trust-dns --domain=domain.local --server=ipaserver.domain.local -p admin -w $PASSWORD -U
  
 echo "Testing kinit"
 echo $PASSWORD | kinit admin
