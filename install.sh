@@ -23,7 +23,7 @@ echo "Downloading packages ..."
 yum install freeipa-client freeipa-admintools httpd mod_auth_kerb -y
 
 echo "Installing desktop for client..."
-yum install gnome-desktop3.i686 krb5-devel.i686 python-devel.i686 -y
+yum install gnome-desktop3.i686 krb5-devel.i686 python-devel.i686 yum-cron -y
 
 # echo "Get pycharm..."
 # wget "https://download.jetbrains.com/python/pycharm-community-2016.1.tar.gz"
