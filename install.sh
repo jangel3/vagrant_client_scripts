@@ -25,8 +25,8 @@ yum install freeipa-client freeipa-admintools httpd mod_auth_kerb -y
 echo "Installing desktop for client..."
 yum install gnome-desktop3.i686 krb5-devel.i686 python-devel.i686 -y
 
-echo "Get pycharm..."
-wget "https://download.jetbrains.com/python/pycharm-community-2016.1.tar.gz"
+# echo "Get pycharm..."
+# wget "https://download.jetbrains.com/python/pycharm-community-2016.1.tar.gz"
 
 echo "Configuring firewalld ..."
 firewall-cmd --permanent --zone=public --add-port  80/tcp
